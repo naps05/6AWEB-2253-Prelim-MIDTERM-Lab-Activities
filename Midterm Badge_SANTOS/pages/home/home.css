@@ -1,0 +1,110 @@
+/* Home Page Styles */
+
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.home-container h1 {
+  font-size: 4rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-md);
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.home-container > p {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  animation: slideInLeft 0.8s ease-out 0.2s backwards;
+}
+
+.home-container h2 {
+  color: var(--secondary);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  display: inline-block;
+  animation: slideInLeft 0.8s ease-out 0.3s backwards;
+}
+
+.home-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60%;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.updates-list {
+  list-style: none;
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.updates-list li {
+  background: var(--bg-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px var(--shadow);
+  border-left: 5px solid var(--primary);
+  animation: fadeInUp 0.6s ease-out backwards;
+  transition: all 0.3s ease;
+}
+
+.updates-list li:nth-child(1) { animation-delay: 0.4s; }
+.updates-list li:nth-child(2) { animation-delay: 0.5s; }
+.updates-list li:nth-child(3) { animation-delay: 0.6s; }
+.updates-list li:nth-child(4) { animation-delay: 0.7s; }
+.updates-list li:nth-child(5) { animation-delay: 0.8s; }
+
+.updates-list li:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 30px var(--shadow);
+  border-left-width: 8px;
+}
+
+.updates-list strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-display);
+}
+
+.updates-list p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

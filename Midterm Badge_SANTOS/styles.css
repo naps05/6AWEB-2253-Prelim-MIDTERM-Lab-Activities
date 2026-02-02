@@ -1,0 +1,98 @@
+/* Global Styles - Community Help Desk */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  /* Color Palette - Warm & Inviting */
+  --primary: #FF6B35;
+  --primary-dark: #E8551E;
+  --secondary: #004E89;
+  --accent: #F7C59F;
+  --bg-main: #FFFBF5;
+  --bg-card: #FFFFFF;
+  --text-primary: #2C2C2C;
+  --text-secondary: #6B6B6B;
+  --border: #E8D5C4;
+  --shadow: rgba(255, 107, 53, 0.15);
+  --success: #52B788;
+  
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Smooth Animations */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Background Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 78, 137, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.875rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: white;
+}

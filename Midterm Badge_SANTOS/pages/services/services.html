@@ -1,0 +1,10 @@
+<h2>Services</h2>
+
+@if (posts$ | async; as posts) {
+  @for (post of posts; track post.id) {
+    <h4>{{ post.title | uppercase }}</h4>
+    <p>{{ post.body | truncate:120 }}</p>
+  }
+} @else {
+  <p>Loading service records...</p>
+}

@@ -1,0 +1,127 @@
+/* App Component Styles - Header & Navigation */
+
+.header {
+  background: var(--bg-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid var(--accent);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.brand {
+  flex-shrink: 0;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.navbar {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.navbar a {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--primary);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+
+.navbar a.active {
+  color: var(--primary);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.navbar a.active::before {
+  width: 100%;
+}
+
+/* Router Outlet Container */
+router-outlet + * {
+  display: block;
+  padding: var(--spacing-xl) var(--spacing-md);
+  min-height: calc(100vh - 100px);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+  
+  .site-title {
+    font-size: 1.5rem;
+  }
+  
+  .navbar {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .navbar a {
+    font-size: 1rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
